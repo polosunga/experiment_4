@@ -1,0 +1,57 @@
+#include <iostream>
+
+using namespace std;
+
+void Sort(int a[], int n)
+{	
+	for (int i=0;i<n;i++)
+		{
+			for (int j=i+1;j<n;j++)
+				{
+					if (a[i] > a[j])
+					{
+						int temp = a[i];
+						a[i] = a[j];
+						a[j] = temp;
+					}
+				}
+		}
+	
+	cout << endl << "After using selection sort..." << endl << endl;
+	cout << "Sorted data: ";
+	
+	for (int i=0;i<n;i++)
+	{
+		cout << a[i] << " ";
+	}	
+}
+		
+int main()
+{
+	int i,j,n,temp;
+	int a[32];
+	
+	cout << "Selection sorting... " << endl;
+	cout << "Enter array size: ";
+	cin >> n;
+	
+	cout << "Enter the " << n << " elements: "; 
+	for (i=0;i<n;i++)
+		{
+			cin >> a[i];
+		}
+	
+	cout << endl << "Your data: ";
+	
+	for (i=0;i<n;i++)
+		{
+			cout << a[i] << " ";
+		}	
+		
+	cout << endl;	
+	
+	Sort (a,n);
+	
+	
+return 0;
+}
